@@ -15,7 +15,6 @@ import groovy.util.GroovyScriptEngine;
 
 /**
  *
- * @author <a href="mailto:jason.wzr@alipay.com">玄翰</a>
  * @version $Id: GroovyDemoOne.java, v 0.1 2018年06月01日 下午4:39 jason.wzr Exp $
  */
 

@@ -1,7 +1,4 @@
-/**
- * Alipay.com Inc.
- * Copyright (c) 2004-2018 All Rights Reserved.
- */
+
 package spring.aop.practice2;
 
 import java.lang.reflect.Method;
@@ -12,7 +9,6 @@ import org.aspectj.lang.Signature;
 
 /**
  *
- * @author <a href="mailto:jason.wzr@alipay.com">玄翰</a>
  * @version $Id: LogAnnotationAspect.java, v 0.1 2018年05月29日 下午4:12 jason.wzr Exp $
  */
 

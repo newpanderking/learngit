@@ -4,7 +4,6 @@ import org.springframework.aop.framework.ProxyFactory;
 
 /**
  *
- * @author <a href="mailto:jason.wzr@alipay.com">玄翰</a>
  * @version $Id: Client.java, v 0.1 2018年05月22日 下午9:16 jason.wzr Exp $
  */
 

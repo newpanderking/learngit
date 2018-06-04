@@ -8,7 +8,6 @@ import org.springframework.aop.MethodBeforeAdvice;
 
 /**
  *
- * @author <a href="mailto:jason.wzr@alipay.com">玄翰</a>
  * @version $Id: MarkAdvice.java, v 0.1 2018年05月22日 下午9:13 jason.wzr Exp $
  */
 
