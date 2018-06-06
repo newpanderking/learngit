@@ -4,9 +4,10 @@
  */
 package spring.cache.ehcache.practice1;
 
-import org.springframework.cache.CacheManager;
+import net.sf.ehcache.CacheManager;
+
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,17 +24,17 @@ import org.springframework.util.ResourceUtils;
 public class CachingConfig {
 
     @Bean
-    public CacheManager cacheManager() {
-        return new ConcurrentMapCacheManager();
+    public EhCacheCacheManager cacheManager(CacheManager cacheManager) {
+        EhCacheCacheManager ehCacheCacheManager = new EhCacheCacheManager();
+        ehCacheCacheManager.setCacheManager(cacheManager);
+        return ehCacheCacheManager;
     }
 
     @Bean
     public EhCacheManagerFactoryBean ehcache() {
-
         EhCacheManagerFactoryBean ehCacheManagerFactoryBean = new EhCacheManagerFactoryBean();
         ehCacheManagerFactoryBean.setConfigLocation(new ClassPathResource(
             ResourceUtils.CLASSPATH_URL_PREFIX + "ehcache.xml"));
         return ehCacheManagerFactoryBean;
-
     }
 }

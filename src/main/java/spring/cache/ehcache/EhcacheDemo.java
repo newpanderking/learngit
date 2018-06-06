@@ -11,6 +11,10 @@ import net.sf.ehcache.Element;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import spring.cache.ehcache.practice2.EhCacheService;
 
 /**
  *
@@ -46,6 +50,19 @@ public class EhcacheDemo {
         final Element getGreeting = cache.get(key);
 
         logger.info(getGreeting.toString());
+    }
+
+    @Test
+    public void practice2Test() throws Exception{
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.ehcache.xml");
+        EhCacheService ehCacheService = (EhCacheService) ctx.getBean("ehcacheService");
+
+        System.out.println("第一次调用：" + ehCacheService.getTimestamp("param"));
+        Thread.sleep(2000);
+        System.out.println("2秒之后调用：" + ehCacheService.getTimestamp("param"));
+        Thread.sleep(11000);
+        System.out.println("再过11秒之后调用：" + ehCacheService.getTimestamp("param"));
     }
 
 }
